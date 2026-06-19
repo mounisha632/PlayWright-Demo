@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mounisha's Portfolio Hub - Update Profile</title>
+  <meta name="description" content="Update your E2E Testing Sandbox profile details.">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  
+  <!-- Security authentication redirect check -->
+  <script>
+    if (sessionStorage.getItem('is_logged_in') !== 'true') {
+      window.location.replace('/');
+    }
+  </script>
+</head>
+<body>
+  <!-- Theme Toggle Floating Button -->
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme">
+    <svg class="icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93 1.41 1.41M17.66 17.66 1.41 1.41M2 12h2M20 12h2M6.34 17.66-1.41 1.41M19.07 4.93-1.41 1.41"></path>
+    </svg>
+    <svg class="icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+    </svg>
+  </button>
+
+  <!-- Main Container -->
+  <main class="container">
+    <div class="login-card">
+      <header class="card-header">
+        <div class="logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#logo-grad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--primary-light)"/>
+                <stop offset="100%" stop-color="var(--primary)"/>
+              </linearGradient>
+            </defs>
+            <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3z"></path>
+          </svg>
+        </div>
+        <h1 class="heading">Update Profile Details</h1>
+        <p class="subheading">Modify your session details below.</p>
+      </header>
+
+      <form id="profile-form" novalidate>
+        <!-- Full Name -->
+        <div class="input-group">
+          <label for="profile-name" class="input-label">Full Name</label>
+          <div class="input-wrapper">
+            <input type="text" id="profile-name" class="form-input" placeholder="Your Name" required autocomplete="name">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
+          </div>
+          <span id="profile-name-error" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <!-- Email Address -->
+        <div class="input-group">
+          <label for="profile-email" class="input-label">Email Address</label>
+          <div class="input-wrapper">
+            <input type="email" id="profile-email" class="form-input" placeholder="name@example.com" required autocomplete="email">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </span>
+          </div>
+          <span id="profile-email-error" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <!-- Job Title -->
+        <div class="input-group">
+          <label for="profile-role" class="input-label">Job Title / Role</label>
+          <div class="input-wrapper">
+            <input type="text" id="profile-role" class="form-input" placeholder="Your Job Title / Role">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+            </span>
+          </div>
+          <span id="profile-role-error" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <!-- New Password -->
+        <div class="input-group">
+          <label for="profile-password" class="input-label">New Password (optional)</label>
+          <div class="input-wrapper">
+            <input type="password" id="profile-password" class="form-input" placeholder="••••••••" autocomplete="new-password">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            </span>
+            <button type="button" id="profile-password-toggle" class="password-toggle-btn" aria-label="Show password">
+              <svg class="icon eye-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="icon eye-closed hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                <line x1="2" x2="22" y1="2" y2="22"></line>
+              </svg>
+            </button>
+          </div>
+          <span id="profile-password-error" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="input-group">
+          <label for="profile-confirm-password" class="input-label">Confirm New Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="profile-confirm-password" class="form-input" placeholder="••••••••" autocomplete="new-password">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </span>
+            <button type="button" id="profile-confirm-password-toggle" class="password-toggle-btn" aria-label="Show password">
+              <svg class="icon eye-open" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+              <svg class="icon eye-closed hidden" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
+                <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"></path>
+                <path d="M6.61 6.61A13.52 13.52 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
+                <line x1="2" x2="22" y1="2" y2="22"></line>
+              </svg>
+            </button>
+          </div>
+          <span id="profile-confirm-password-error" class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="update-profile-btn" class="submit-btn" style="margin-top: 10px;">
+          <span class="btn-text">Save Profile Changes</span>
+          <svg class="spinner hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Back to Dashboard Link -->
+      <div class="divider">
+        <span>or</span>
+      </div>
+      <div style="text-align: center;">
+        <a href="/home.html" class="forgot-link">Cancel & Return to Dashboard</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container" role="alert" aria-live="assertive"></div>
+
+  <!-- Main JavaScript File -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

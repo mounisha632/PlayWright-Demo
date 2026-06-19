@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Test reports and outputs
+playwright-report/
+test-results/
+.playwright-artifacts/
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# IDE/VCS settings
+.vscode/
+.idea/
+.agents/
+.system_generated/
